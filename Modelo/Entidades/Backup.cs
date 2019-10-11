@@ -1,8 +1,10 @@
 ﻿using Modelo.Entidades.Enumeradores;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Modelo.Entidades
 {
+    [Table("BACKUPS")]
     public class Backup
     {
         public long? BackupId { get; set; }

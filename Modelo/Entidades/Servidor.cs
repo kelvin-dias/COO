@@ -23,6 +23,8 @@ namespace Modelo.Entidades
         [DisplayName("IP")]
         [Required(ErrorMessage = "Informe o Ip do Servidor")]
         public string ServidorIp { get; set; }
+        public string Servicos { get; set; }
+        public string Observacao { get; set; }
         public long? BackupId { get; set; }
         public Backup Backup { get; set; }
         public ICollection<Backup> BackupServidor { get; set; }

@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html lang="pt-br" class="no-focus">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    @RenderSection("styles", false)
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Template/assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Template/assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
+    <link rel="stylesheet" id="css-main" href="@Url.Content("~/Template/assets/css/codebase.min.css")">
+    <!-- END Stylesheets -->
+</head>
+<body>
+    <div id="page-container" class="sidebar-inverse side-scroll page-header-fixed page-header-inverse main-content-boxed">
+        <!-- Header -->
+        <header id="page-header">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="content-header-section">
+                    <!-- Logo -->
+                    <div class="content-header-item">
+                        <a class="link-effect font-w700 mr-5" href="index.html">
+                            <i class="si si-fire text-primary"></i>
+                            <span class="font-size-xl text-dual-primary-dark">code</span><span class="font-size-xl text-primary">base</span>
+                        </a>
+                    </div>
+                    <!-- END Logo -->
+                </div>
+                <!-- END Left Section -->
+                <!-- Middle Section -->
+                <div class="content-header-section d-none d-lg-block">
+                    <!-- Header Navigation -->
+                    <ul class="nav-main-header">
+                        <li>
+                            <a class="active" href="bd_dashboard.html"><i class="si si-compass"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i>CheckList</a>
+                            <ul>
+                                <li>
+                                    <a href="bd_variations_hero_simple_1.html">Hero Simple 1</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_simple_2.html">Hero Simple 2</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_simple_3.html">Hero Simple 3</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_simple_4.html">Hero Simple 4</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_image_1.html">Hero Image 1</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_image_2.html">Hero Image 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i>Ocorrências</a>
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("Nova Ocorrência", "AdicionarOcorrencia", "Ocorrencia")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Listar Ocorrências", "ConsultarOcorrencia", "Ocorrencia")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i>Servidores</a>
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("Adicionar Servidor", "AdicionarServidor", "Servidor")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Listar Servidores", "ConsultarServidor", "Servidor")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i>Contatos</a>
+                            <ul>
+                                <li>
+                                    <a href="bd_variations_hero_simple_1.html">Hero Simple 1</a>
+                                </li>
+                                <li>
+                                    <a href="bd_variations_hero_simple_2.html">Hero Simple 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- END Header Navigation -->
+                </div>
+                <!-- Right Section -->
+                <div class="content-header-section">
+                    <!-- Color Themes + A few of the many header options (used just for demonstration) -->
+                    <!-- Themes functionality initialized in Template._uiHandleTheme() -->
+                    <!-- END Color Themes + A few of the many header options -->
+                    <!-- Open Search Section -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <!-- END Open Search Section -->
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <!-- END Toggle Sidebar -->
+                </div>
+                <!-- END Right Section -->
+            </div>
+            <!-- END Header Content -->
+            <!-- Header Search -->
+            <!-- END Header Search -->
+            <!-- Header Loader -->
+            <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+            <div id="page-header-loader" class="overlay-header bg-primary">
+                <div class="content-header content-header-fullrow text-center">
+                    <div class="content-header-item">
+                        <i class="fa fa-sun-o fa-spin text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- END Header Loader -->
+        </header>
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main id="main-container">
+            @RenderBody()
+            <!-- Page Content -->
+            <!-- END Page Content -->
+
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <footer id="page-footer" class="opacity-0">
+            <div class="content py-20 font-size-xs clearfix">
+                <div class="float-right">
+                    Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                </div>
+                <div class="float-left">
+                    <a class="font-w600" href="#" target="_blank">Codebase 3.0</a> &copy; <span class="js-year-copy">2017</span>
+                </div>
+            </div>
+        </footer>
+        <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+    <!-- Page JS Plugins -->
+    <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>
+    @*<script src="@Url.Content("~/Template/assets/js/plugins/chartjs/Chart.bundle.min.js")"></script>*@
+
+    <!-- Page JS Code -->
+    <script src="@Url.Content("~/Template/assets/js/codebase.core.min.js")"></script>
+    <script src="@Url.Content("~/Template/assets/js/codebase.app.min.js")"></script>
+    <script src="@Url.Content("~/Template/assets/js/pages/be_pages_dashboard.min.js")"></script>
+
+    @RenderSection("ScriptPage", false);
+</body>
+</html>
