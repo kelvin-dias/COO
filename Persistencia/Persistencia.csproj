@@ -125,10 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\EFContext.cs" />
+    <Compile Include="DAL\Entidades\OcorrenciaDAL.cs" />
     <Compile Include="DAL\Entidades\ServidorDAL.cs" />
     <Compile Include="Migrations\20191011150559_Inicial 1.0.cs" />
     <Compile Include="Migrations\20191011150559_Inicial 1.0.designer.cs">
       <DependentUpon>20191011150559_Inicial 1.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20191014181347_Inicial 1.1.cs" />
+    <Compile Include="Migrations\20191014181347_Inicial 1.1.designer.cs">
+      <DependentUpon>20191014181347_Inicial 1.1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EFContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

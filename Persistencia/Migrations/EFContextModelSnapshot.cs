@@ -41,7 +41,7 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("ServidorId");
 
-                    b.ToTable("Backups");
+                    b.ToTable("BACKUPS");
                 });
 
             modelBuilder.Entity("Modelo.Entidades.Contato", b =>
@@ -141,6 +141,10 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired();
+
+                    b.Property<string>("Observacao");
+
+                    b.Property<string>("Servicos");
 
                     b.Property<string>("ServidorIp")
                         .IsRequired();

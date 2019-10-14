@@ -2,6 +2,7 @@
 class AdicionarServidor {
     constructor() {
     }
+    
 }
 
 $(document).ready(function(){

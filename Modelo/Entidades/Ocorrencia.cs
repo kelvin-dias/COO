@@ -14,7 +14,7 @@ namespace Modelo.Entidades
         public long? OcorrenciaId { get; set; }
 
         [DisplayName("Número Ocorrência")]
-        public long NumeroOcorrencia { get; set; }
+        public long? NumeroOcorrencia { get; set; }
 
         [DisplayName("Título")]
         [Required(ErrorMessage = "Informe o Título da Ocorrência")]
