@@ -50,9 +50,10 @@
     <Compile Include="Entidades\Enumeradores\Periodo.cs" />
     <Compile Include="Entidades\Enumeradores\Status.cs" />
     <Compile Include="Entidades\Ocorrencia.cs" />
-    <Compile Include="Entidades\OcorrenciaIteracao.cs" />
+    <Compile Include="Entidades\IteracaoOcorrencia.cs" />
     <Compile Include="Entidades\Rotina.cs" />
     <Compile Include="Entidades\Servidor.cs" />
+    <Compile Include="Entidades\Tabelas\IteracaoOcorrencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

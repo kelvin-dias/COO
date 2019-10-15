@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Modelo.Entidades.Ocorrencia>
+
+@{
+    ViewBag.Title = "ConsultarOcorrencia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section	Styles	{
+    <link href="@Url.Content("~/Template/assets/js/plugins/datatables/dataTables.bootstrap4.css")" rel="stylesheet" />
+}
+<!-- Dynamic Table Full -->
+<div class="block">
+    <div class="block-header block-header-default">
+        <h2 class="block-title">Ocorrências<small></small></h2>
+    </div>
+    <div class="block-content block-content-full">
+        <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+        <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+            <thead>
+                <tr role="row">
+                    <th class="text-center sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label=": activate to sort column descending" style="width: 10%;">@Html.DisplayNameFor(model => model.NumeroOcorrencia)</th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">@Html.DisplayNameFor(model => model.Titulo)</th>
+                    <th class="d-none d-sm-table-cell sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">@Html.DisplayNameFor(model => model.DataHora)</th>
+                    <th class="d-none d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</th>
+                    <th class="d-none d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">@Html.DisplayNameFor(model => model.StatusOcorrencia)</th>
+                    <th class="text-center sorting_disabled" style="width: 15%;" rowspan="1" colspan="1" aria-label="Profile">Profile</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr role="row" class="odd">
+                    <td class="text-center sorting_1">@Html.ActionLink(item.NumeroOcorrencia.ToString(), "DetalharOcorrencia", new { id = item.OcorrenciaId })</td>
+                    <td class="font-w600">@Html.DisplayFor(modelItem => item.Titulo)</td>
+                    <td class="d-none d-sm-table-cell">@Html.DisplayFor(modelItem => item.DataHora)</td>
+                    <td class="d-none d-sm-table-cell">
+                        <span class="badge badge-warning">@Html.DisplayFor(modelItem => item.CriticidadeOcorrencia)</span>
+                    </td>
+                    <td class="d-none d-sm-table-cell">
+                        <span class="badge badge-warning">@Html.DisplayFor(modelItem => item.StatusOcorrencia)</span>
+                    </td>
+                    <td class="text-center">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OcorrenciaId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.OcorrenciaId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.OcorrenciaId })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END Dynamic Table Full -->
+
+@section	ScriptPage	{
+    <script src="@Url.Content("~/Template/assets/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Template/assets/js/plugins/datatables/dataTables.bootstrap4.min.js")"></script>
+    <script src="@Url.Content("~/Template/assets/js/pages/be_tables_datatables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Views/Servidor/ConsultarOcorrencia.js")"></script>
+}

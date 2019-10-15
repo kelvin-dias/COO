@@ -3832,6 +3832,7 @@
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IteracaoOcorrenciaController.cs" />
     <Compile Include="Controllers\OcorrenciaController.cs" />
     <Compile Include="Controllers\RotinaController.cs" />
     <Compile Include="Controllers\ServidorController.cs" />
@@ -4124,6 +4125,11 @@
     <Content Include="Template\assets\js\plugins\summernote\summernote.js.map" />
     <Content Include="Template\assets\_scss\vendor\_fullcalendar.scss" />
     <Content Include="Views\Ocorrencia\AdicionarOcorrencia.cshtml" />
+    <Content Include="Views\Ocorrencia\ConsultarOcorrencia.cshtml" />
+    <Content Include="Views\Ocorrencia\DetalharOcorrencia.cshtml" />
+    <Content Include="Views\IteracaoOcorrencia\ConsultarIteracao.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\IteracaoOcorrencia\AdicionarIteracao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

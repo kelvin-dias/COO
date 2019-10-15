@@ -17,28 +17,25 @@ namespace COO.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //Geração do número aleatório da Ocorrência
+                    /*GERANDO NÚMERO DE OCORRENCIA E VALIDANDO NO BANCO DE DADOS */
                     Random randNum = new Random();
                     bool statusValidacao = false;
-
                     do
                     {
                         long numero = randNum.Next(100000, 999999);
-                        Ocorrencia produto = ocorrenciaServico.ObterOcorrenciaPorNumero((long)numero);
+                        if (ocorrenciaServico.ObterOcorrenciaPorNumero(numero) == null)
 
-
-                        if (produto == null)
                         {
+                            ocorrencia.NumeroOcorrencia = numero;
                             statusValidacao = true;
                         }
 
                     } while (statusValidacao == false);
 
-
                     ocorrencia.StatusOcorrencia = 0;
                     ocorrencia.DataHora = DateTime.Now;
-                    ocorrenciaServico.GravarServidor(ocorrencia);
-                    return RedirectToAction("Index");
+                    ocorrenciaServico.GravarOcorrencia(ocorrencia);
+                    return RedirectToAction("ConsultarOcorrencia");
                 }
                 return View(ocorrencia);
             }
@@ -62,7 +59,6 @@ namespace COO.Controllers
             return View(produto);
         }
 
-
         // GET: Ocorrencia
         public ActionResult ConsultarOcorrencia()
         {
@@ -85,9 +81,7 @@ namespace COO.Controllers
         //	GET:	Servidor/Details
         public ActionResult DetalharOcorrencia(long? id)
         {
-
             return ObterVisaoOcorrenciaPorId(id);
-
         }
     }
 }

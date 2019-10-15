@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistencia.Migrations
 {
-    public partial class Inicial10 : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace Persistencia.Migrations
                 {
                     OcorrenciaId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NumeroOcorrencia = table.Column<long>(nullable: false),
+                    NumeroOcorrencia = table.Column<long>(nullable: true),
                     Titulo = table.Column<string>(nullable: false),
                     DataHora = table.Column<DateTime>(nullable: false),
                     StatusOcorrencia = table.Column<int>(nullable: false),
@@ -63,7 +63,7 @@ namespace Persistencia.Migrations
                 name: "ITERACOES_OCORRENCIAS",
                 columns: table => new
                 {
-                    OcorrenciaIteracaoId = table.Column<long>(nullable: false)
+                    IteracaoOcorrenciaId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     TextoIteracao = table.Column<string>(nullable: true),
                     DataHoraIteracao = table.Column<DateTime>(nullable: false),
@@ -72,7 +72,7 @@ namespace Persistencia.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ITERACOES_OCORRENCIAS", x => x.OcorrenciaIteracaoId);
+                    table.PrimaryKey("PK_ITERACOES_OCORRENCIAS", x => x.IteracaoOcorrenciaId);
                     table.ForeignKey(
                         name: "FK_ITERACOES_OCORRENCIAS_OCORRENCIAS_OcorrenciaId",
                         column: x => x.OcorrenciaId,
@@ -90,6 +90,8 @@ namespace Persistencia.Migrations
                     Nome = table.Column<string>(nullable: false),
                     AmbienteServidor = table.Column<int>(nullable: false),
                     ServidorIp = table.Column<string>(nullable: false),
+                    Servicos = table.Column<string>(nullable: true),
+                    Observacao = table.Column<string>(nullable: true),
                     BackupId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -98,7 +100,7 @@ namespace Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Backups",
+                name: "BACKUPS",
                 columns: table => new
                 {
                     BackupId = table.Column<long>(nullable: false)
@@ -112,9 +114,9 @@ namespace Persistencia.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Backups", x => x.BackupId);
+                    table.PrimaryKey("PK_BACKUPS", x => x.BackupId);
                     table.ForeignKey(
-                        name: "FK_Backups_SERVIDORES_ServidorId",
+                        name: "FK_BACKUPS_SERVIDORES_ServidorId",
                         column: x => x.ServidorId,
                         principalTable: "SERVIDORES",
                         principalColumn: "ServidorId",
@@ -122,8 +124,8 @@ namespace Persistencia.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Backups_ServidorId",
-                table: "Backups",
+                name: "IX_BACKUPS_ServidorId",
+                table: "BACKUPS",
                 column: "ServidorId");
 
             migrationBuilder.CreateIndex(
@@ -137,10 +139,10 @@ namespace Persistencia.Migrations
                 column: "BackupId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SERVIDORES_Backups_BackupId",
+                name: "FK_SERVIDORES_BACKUPS_BackupId",
                 table: "SERVIDORES",
                 column: "BackupId",
-                principalTable: "Backups",
+                principalTable: "BACKUPS",
                 principalColumn: "BackupId",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -148,8 +150,8 @@ namespace Persistencia.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Backups_SERVIDORES_ServidorId",
-                table: "Backups");
+                name: "FK_BACKUPS_SERVIDORES_ServidorId",
+                table: "BACKUPS");
 
             migrationBuilder.DropTable(
                 name: "CONTATOS");
@@ -167,7 +169,7 @@ namespace Persistencia.Migrations
                 name: "SERVIDORES");
 
             migrationBuilder.DropTable(
-                name: "Backups");
+                name: "BACKUPS");
         }
     }
 }

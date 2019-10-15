@@ -10,8 +10,8 @@ using Persistencia.Context;
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20191011150559_Inicial 1.0")]
-    partial class Inicial10
+    [Migration("20191015145644_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,7 +43,7 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("ServidorId");
 
-                    b.ToTable("Backups");
+                    b.ToTable("BACKUPS");
                 });
 
             modelBuilder.Entity("Modelo.Entidades.Contato", b =>
@@ -65,33 +65,9 @@ namespace Persistencia.Migrations
                     b.ToTable("CONTATOS");
                 });
 
-            modelBuilder.Entity("Modelo.Entidades.Ocorrencia", b =>
+            modelBuilder.Entity("Modelo.Entidades.IteracaoOcorrencia", b =>
                 {
-                    b.Property<long?>("OcorrenciaId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CriticidadeOcorrencia");
-
-                    b.Property<DateTime>("DataHora");
-
-                    b.Property<long>("NumeroOcorrencia");
-
-                    b.Property<string>("Solucao");
-
-                    b.Property<int>("StatusOcorrencia");
-
-                    b.Property<string>("Titulo")
-                        .IsRequired();
-
-                    b.HasKey("OcorrenciaId");
-
-                    b.ToTable("OCORRENCIAS");
-                });
-
-            modelBuilder.Entity("Modelo.Entidades.OcorrenciaIteracao", b =>
-                {
-                    b.Property<long?>("OcorrenciaIteracaoId")
+                    b.Property<long?>("IteracaoOcorrenciaId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -103,11 +79,35 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("TextoIteracao");
 
-                    b.HasKey("OcorrenciaIteracaoId");
+                    b.HasKey("IteracaoOcorrenciaId");
 
                     b.HasIndex("OcorrenciaId");
 
                     b.ToTable("ITERACOES_OCORRENCIAS");
+                });
+
+            modelBuilder.Entity("Modelo.Entidades.Ocorrencia", b =>
+                {
+                    b.Property<long?>("OcorrenciaId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CriticidadeOcorrencia");
+
+                    b.Property<DateTime>("DataHora");
+
+                    b.Property<long?>("NumeroOcorrencia");
+
+                    b.Property<string>("Solucao");
+
+                    b.Property<int>("StatusOcorrencia");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired();
+
+                    b.HasKey("OcorrenciaId");
+
+                    b.ToTable("OCORRENCIAS");
                 });
 
             modelBuilder.Entity("Modelo.Entidades.Rotina", b =>
@@ -144,6 +144,10 @@ namespace Persistencia.Migrations
                     b.Property<string>("Nome")
                         .IsRequired();
 
+                    b.Property<string>("Observacao");
+
+                    b.Property<string>("Servicos");
+
                     b.Property<string>("ServidorIp")
                         .IsRequired();
 
@@ -161,7 +165,7 @@ namespace Persistencia.Migrations
                         .HasForeignKey("ServidorId");
                 });
 
-            modelBuilder.Entity("Modelo.Entidades.OcorrenciaIteracao", b =>
+            modelBuilder.Entity("Modelo.Entidades.IteracaoOcorrencia", b =>
                 {
                     b.HasOne("Modelo.Entidades.Ocorrencia", "Ocorrencia")
                         .WithMany("Iteracoes")

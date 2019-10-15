@@ -16,7 +16,6 @@ namespace Persistencia.DAL.Entidades
 
         public Ocorrencia ObterOcorrenciaPorId(long? id)
         {
-
             return context.Ocorrencias.Where(p => p.OcorrenciaId == id).First();
         }
 
@@ -26,10 +25,9 @@ namespace Persistencia.DAL.Entidades
             context.SaveChanges();
         }
 
-        public Ocorrencia ObterOcorrenciaPorNumero(long? numeroOcorrencia)
+        public Ocorrencia ObterOcorrenciaPorNumero(long numeroOcorrencia)
         {
-            return context.Ocorrencias.Where(p => p.NumeroOcorrencia == numeroOcorrencia).First();
-
+            return context.Ocorrencias.FirstOrDefault(x => x.NumeroOcorrencia == numeroOcorrencia);
         }
     }
 }

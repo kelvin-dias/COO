@@ -1,12 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Modelo.Entidades
+namespace Modelo.Entidades.Tabelas
 {
-    [Table("ITERACOES_OCORRENCIAS")]
-    public class OcorrenciaIteracao
+    [Table("ITERACOES_OCORRENCIA")]
+    public class IteracaoOcorrencia
     {
-        public long? OcorrenciaIteracaoId { get; set; }
+        public long? IteracaoOcorrenciaId { get; set; }
         public string TextoIteracao { get; set; }
         public DateTime DataHoraIteracao { get; set; }
         public string Assinatura { get; set; }

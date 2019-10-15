@@ -19,12 +19,12 @@ namespace Servico.Entidades
             return ocorrenciaDAL.ObterOcorrenciaPorId(id);
         }
 
-        public void GravarServidor(Ocorrencia ocorrencia)
+        public void GravarOcorrencia(Ocorrencia ocorrencia)
         {
             ocorrenciaDAL.GravarOcorrencia(ocorrencia);
         }
 
-        public Ocorrencia ObterOcorrenciaPorNumero(long? numeroOcorrencia)
+        public Ocorrencia ObterOcorrenciaPorNumero(long numeroOcorrencia)
         {
             return ocorrenciaDAL.ObterOcorrenciaPorNumero(numeroOcorrencia);
         }

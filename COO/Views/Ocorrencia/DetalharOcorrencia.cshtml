@@ -1,0 +1,71 @@
+﻿@model Modelo.Entidades.Ocorrencia
+
+@{
+    ViewBag.Title = "DetalharOcorrencia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col p-0">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Html.DisplayNameFor(model => model.NumeroOcorrencia)</h3>
+            </div>
+            <div class="block-content">
+                <p>@Html.DisplayFor(model => model.NumeroOcorrencia)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col p-0">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Html.DisplayNameFor(model => model.Titulo)</h3>
+            </div>
+            <div class="block-content">
+                <p>@Html.DisplayFor(model => model.Titulo)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col p-0">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Html.DisplayNameFor(model => model.DataHora)</h3>
+            </div>
+            <div class="block-content">
+                <p>@Html.DisplayFor(model => model.DataHora)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col p-0">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</h3>
+            </div>
+            <div class="block-content">
+                <p>@Html.DisplayFor(model => model.CriticidadeOcorrencia)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col p-0">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Html.DisplayFor(model => model.CriticidadeOcorrencia)</h3>
+            </div>
+            <div class="block-content">
+                <p>@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="block-header block-header-default">
+        <h3 class="block-title">Atendimentos</h3>
+    </div>
+    @*Chamada da Action no Controlador IteracaoController onde é listado as Iterações das Ocorrencias.*@
+    @Html.Action("ConsultarIteracao", "IteracaoOcorrencia", new { Id = Model.OcorrenciaId })
+</div>

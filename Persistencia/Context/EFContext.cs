@@ -10,7 +10,7 @@ namespace Persistencia.Context
         public DbSet<Rotina> Rotinas { get; set; }
         public DbSet<Servidor> Servidores { get; set; }
         public DbSet<Ocorrencia> Ocorrencias { get; set; }
-        public DbSet<OcorrenciaIteracao> OcorrenciaIteracoes { get; set; }
+        public DbSet<IteracaoOcorrencia> IteracoesOcorrencias { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

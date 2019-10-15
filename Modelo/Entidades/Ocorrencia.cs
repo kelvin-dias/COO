@@ -13,7 +13,7 @@ namespace Modelo.Entidades
         [DisplayName("ID")]
         public long? OcorrenciaId { get; set; }
 
-        [DisplayName("Número Ocorrência")]
+        [DisplayName("Número")]
         public long? NumeroOcorrencia { get; set; }
 
         [DisplayName("Título")]
@@ -33,6 +33,6 @@ namespace Modelo.Entidades
         [DisplayName("Solução")]
         public string Solucao { get; set; }
 
-        public ICollection<OcorrenciaIteracao> Iteracoes { get; set; }
+        public ICollection<IteracaoOcorrencia> Iteracoes { get; set; }
     }
 }
