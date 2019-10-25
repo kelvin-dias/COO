@@ -174,9 +174,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\Views\Ocorrencia\DetalharOcorrencia.js" />
     <Content Include="Scripts\Views\Servidor\ConsultarServidor.js" />
     <Content Include="Scripts\Views\Servidor\AdicionarServidor.js" />
     <Content Include="Template\assets\css\codebase.css" />
@@ -191,6 +188,11 @@
     <Content Include="Template\assets\css\themes\flat.min.css" />
     <Content Include="Template\assets\css\themes\pulse.css" />
     <Content Include="Template\assets\css\themes\pulse.min.css" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\css\fontawesome-all.css" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\css\fontawesome-all.min.css" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-brands-400.svg" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-regular-400.svg" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-solid-900.svg" />
     <Content Include="Template\assets\fonts\fontawesome4\fontawesome-webfont.svg" />
     <Content Include="Template\assets\fonts\fontawesome5\fa-brands-400.svg" />
     <Content Include="Template\assets\fonts\fontawesome5\fa-regular-400.svg" />
@@ -3835,6 +3837,7 @@
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IteracaoOcorrenciaController.cs" />
     <Compile Include="Controllers\OcorrenciaController.cs" />
     <Compile Include="Controllers\RotinaController.cs" />
     <Compile Include="Controllers\ServidorController.cs" />
@@ -4129,6 +4132,21 @@
     <Content Include="Views\Ocorrencia\AdicionarOcorrencia.cshtml" />
     <Content Include="Views\Ocorrencia\ConsultarOcorrencia.cshtml" />
     <Content Include="Views\Ocorrencia\DetalharOcorrencia.cshtml" />
+    <Content Include="Views\IteracaoOcorrencia\ConsultarIteracao.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\IteracaoOcorrencia\AdicionarIteracao.cshtml" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-brands-400.eot" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-brands-400.ttf" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-brands-400.woff" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-brands-400.woff2" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-regular-400.eot" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-regular-400.ttf" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-regular-400.woff" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-regular-400.woff2" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-solid-900.eot" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-solid-900.ttf" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-solid-900.woff" />
+    <Content Include="Template\assets\fonts\fontawesome 5.3\webfonts\fa-solid-900.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
