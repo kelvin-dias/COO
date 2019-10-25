@@ -1,5 +1,6 @@
 ﻿using Modelo.Entidades;
 using Servico.Entidades;
+using Servico.Tabelas;
 using System;
 using System.Net;
 using System.Web.Mvc;
@@ -9,6 +10,7 @@ namespace COO.Controllers
     public class OcorrenciaController : Controller
     {
         private OcorrenciaServico ocorrenciaServico = new OcorrenciaServico();
+        private IteracaoOcorrenciaServico iteracaoServico = new IteracaoOcorrenciaServico();
 
         // Métodos do Controlador Ocorrencia
         private ActionResult GravarOcorrencia(Ocorrencia ocorrencia)
@@ -83,5 +85,14 @@ namespace COO.Controllers
         {
             return ObterVisaoOcorrenciaPorId(id);
         }
+
+        [HttpPost]
+        public JsonResult ListarIteracoes(long? Id)
+        {
+            var iteracoes = iteracaoServico.ObterIteracoes(Id);
+            return Json(iteracoes, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

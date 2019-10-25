@@ -10,8 +10,8 @@ using Persistencia.Context;
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20191015145644_Inicial")]
-    partial class Inicial
+    [Migration("20191020022608_inicial1.0")]
+    partial class inicial10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
