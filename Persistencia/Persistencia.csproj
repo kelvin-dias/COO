@@ -128,9 +128,9 @@
     <Compile Include="DAL\Entidades\OcorrenciaDAL.cs" />
     <Compile Include="DAL\Entidades\ServidorDAL.cs" />
     <Compile Include="DAL\Tabelas\IteracaoOcorrenciaDAL.cs" />
-    <Compile Include="Migrations\20191015145644_Inicial.cs" />
-    <Compile Include="Migrations\20191015145644_Inicial.designer.cs">
-      <DependentUpon>20191015145644_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20191020022608_inicial1.0.cs" />
+    <Compile Include="Migrations\20191020022608_inicial1.0.designer.cs">
+      <DependentUpon>20191020022608_inicial1.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EFContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
