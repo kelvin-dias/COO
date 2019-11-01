@@ -1,5 +1,6 @@
 ﻿using Modelo.Entidades;
 using Servico.Entidades;
+using System;
 using System.Net;
 using System.Web.Mvc;
 
@@ -28,12 +29,8 @@ namespace COO.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
                     servidorServico.GravarServidor(servidor);
                     return RedirectToAction("ConsultarServidor");
-                }
-                return View(servidor);
             }
             catch
             {
@@ -48,10 +45,10 @@ namespace COO.Controllers
         }
 
         // GET: Servidor/Create
-        public ActionResult AdicionarServidor()
-        {
-            return View();
-        }
+        //public ActionResult AdicionarServidor()
+        //{
+        //    return View();
+        //}
 
         // POST: Servidor/Create
         [HttpPost]
@@ -59,6 +56,22 @@ namespace COO.Controllers
         {
             return GravarServidor(servidor);
         }
+
+        //[HttpPost]
+        //public string Adicionar(Servidor servidor)
+        //{
+        //    if (servidor != null)
+        //    {
+        //        //TODO: salvar dados no banco de dados
+        //        GravarServidor(servidor);
+        //        return "Obrigado. O dados foram Salvos.";
+        //    }
+        //    else
+        //    {
+        //        return "Complete a informação do formulário.";
+        //    }
+        //}
+
 
         //	GET: Servidor/Edit
         public ActionResult EditarServidor(long? id)

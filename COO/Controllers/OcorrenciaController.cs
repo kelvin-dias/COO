@@ -1,5 +1,6 @@
 ﻿using Modelo.Entidades;
 using Servico.Entidades;
+using Servico.Tabelas;
 using System;
 using System.Net;
 using System.Web.Mvc;
@@ -9,6 +10,7 @@ namespace COO.Controllers
     public class OcorrenciaController : Controller
     {
         private OcorrenciaServico ocorrenciaServico = new OcorrenciaServico();
+        private IteracaoOcorrenciaServico iteracaoServico = new IteracaoOcorrenciaServico();
 
         // Métodos do Controlador Ocorrencia
         private ActionResult GravarOcorrencia(Ocorrencia ocorrencia)
@@ -17,21 +19,7 @@ namespace COO.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    /*GERANDO NÚMERO DE OCORRENCIA E VALIDANDO NO BANCO DE DADOS */
-                    Random randNum = new Random();
-                    bool statusValidacao = false;
-                    do
-                    {
-                        long numero = randNum.Next(100000, 999999);
-                        if (ocorrenciaServico.ObterOcorrenciaPorNumero(numero) == null)
-
-                        {
-                            ocorrencia.NumeroOcorrencia = numero;
-                            statusValidacao = true;
-                        }
-
-                    } while (statusValidacao == false);
-
+                    ocorrencia.NumeroOcorrencia = ocorrenciaServico.GerarNumeroOcorrencia();
                     ocorrencia.StatusOcorrencia = 0;
                     ocorrencia.DataHora = DateTime.Now;
                     ocorrenciaServico.GravarOcorrencia(ocorrencia);
@@ -83,5 +71,21 @@ namespace COO.Controllers
         {
             return ObterVisaoOcorrenciaPorId(id);
         }
+
+        [HttpPost]
+        public JsonResult ListarIteracoes(long? Id)
+        {
+            var iteracoes = iteracaoServico.ObterIteracoes(Id);
+            return Json(iteracoes, JsonRequestBehavior.AllowGet);
+        }
+
+        //[HttpPost]
+        //public ActionResult AdicionarIteracoes(IteracaoOcorrencia iteracao)
+        //{
+
+        //    return iteracaoServico.GravarIteracao(iteracao);
+
+        //}
+
     }
 }

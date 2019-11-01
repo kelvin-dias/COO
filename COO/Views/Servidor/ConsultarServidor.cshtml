@@ -6,12 +6,15 @@
 }
 
 @section	Styles	{
-    <link href="@Url.Content("~/Template/assets/js/plugins/datatables/dataTables.bootstrap4.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/Template/assets/js/plugins/datatables/dataTables.bootstrap4.css")" rel="stylesheet" />
 }
 <!-- Dynamic Table Full -->
 <div class="block">
     <div class="block-header block-header-default">
         <h2 class="block-title">Lista de Servidores<small></small></h2>
+        <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="side_overlay_toggle">
+            <i class="far fa-plus-square"></i>
+        </button>
     </div>
     <div class="block-content block-content-full">
         <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -45,6 +48,72 @@
             </tbody>
         </table>
     </div>
+
+    <aside id="side-overlay" data-simplebar="init">
+        <div class="simplebar-track vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 220px;"></div></div><div class="simplebar-track horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;">
+            <div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
+                <!-- Side Header -->
+                <div class="content-header content-header-fullrow">
+                    <div class="content-header-section align-parent">
+                        <!-- Close Side Overlay -->
+                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                        <button type="button" class="btn btn-circle btn-dual-secondary align-v-r" data-toggle="layout" data-action="side_overlay_close">
+                            <i class="fa fa-times text-danger"></i>
+                        </button>
+                        <!-- END Close Side Overlay -->
+                        <!-- User Info -->
+                        <div class="content-header-item">
+                            <a class="align-middle link-effect text-primary-dark font-w600">Novo Servidor</a>
+                        </div>
+                        <!-- END User Info -->
+                    </div>
+                </div>
+                <!-- END Side Header -->
+                <!-- Side Content -->
+                <div class="content-side">
+                    <div class="block-content">
+                        <form action="be_pages_dashboard.html" method="post" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="example-input-small">Nome Servidor</label>
+                                <input type="text" class="form-control form-control-sm  txtNome" id="example-input-small" name="example-input-small" placeholder=".form-control-sm">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-input-small">IP do Servidor</label>
+                                <input type="text" class="form-control form-control-sm txtIp" id="example-input-small " name="example-input-small" placeholder=".form-control-sm">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-input-small">Ambiente</label>
+                                <select class="form-control form-control-sm" id="rblAmbiente">
+                                    <option>Selecione</option>
+                                    <option value="0">RJ1</option>
+                                    <option value="1">RJ2</option>
+                                    <option value="2">MRJ</option>
+                                    <option value="3">MSP</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-12" for="example-textarea-input">Observações</label>
+                                <div class="col-12">
+                                    <textarea class="form-control txtObservacao" id="example-textarea-input " name="example-textarea-input" rows="6" placeholder="Content.."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-block btn-alt-primary" id="btnSalvar">
+                                        <i class="fa fa-refresh mr-5"></i> Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Side Content -->
+            </div>
+        </div>
+    </aside>
 </div>
 <!-- END Dynamic Table Full -->
 

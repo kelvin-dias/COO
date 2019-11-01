@@ -5,67 +5,94 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.HiddenFor(model => model.OcorrenciaId, new { id = "hddnOcorrenciaId" })
+
 <div class="row">
-    <div class="col p-0">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">@Html.DisplayNameFor(model => model.NumeroOcorrencia)</h3>
+    <div class="col-md-6 col-xl-3">
+        <a class="block block-link-shadow">
+            <div class="block-content block-content-full">
+                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.NumeroOcorrencia)</div>
+                <div class="font-size-sm font-w600 text-uppercase text-muted">
+                    @Html.DisplayNameFor(model => model.NumeroOcorrencia)
+                </div>
             </div>
-            <div class="block-content">
-                <p>@Html.DisplayFor(model => model.NumeroOcorrencia)</p>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <div class="col p-0">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">@Html.DisplayNameFor(model => model.Titulo)</h3>
+    <div class="col-md-6 col-xl-3">
+        <a class="block block-link-shadow">
+            <div class="block-content block-content-full">
+                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.Titulo)</div>
+                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.Titulo)</div>
             </div>
-            <div class="block-content">
-                <p>@Html.DisplayFor(model => model.Titulo)</p>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <div class="col p-0">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">@Html.DisplayNameFor(model => model.DataHora)</h3>
+    <div class="col-md-6 col-xl-3">
+        <a class="block block-link-shadow">
+            <div class="block-content block-content-full">
+                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.DataHora)</div>
+                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.DataHora)</div>
             </div>
-            <div class="block-content">
-                <p>@Html.DisplayFor(model => model.DataHora)</p>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <div class="col p-0">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</h3>
+    <div class="col-md-6 col-xl-3">
+        <a class="block block-link-shadow">
+            <div class="block-content block-content-full">
+                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.CriticidadeOcorrencia)</div>
+                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</div>
             </div>
-            <div class="block-content">
-                <p>@Html.DisplayFor(model => model.CriticidadeOcorrencia)</p>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <div class="col p-0">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">@Html.DisplayFor(model => model.CriticidadeOcorrencia)</h3>
+</div>
+
+<div class="content pt-0">
+    <div class="block">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Just a small question!</h3>
+            <div class="block-options">
+
             </div>
-            <div class="block-content">
-                <p>@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</p>
-            </div>
+        </div>
+        <div class="block-content">
+            <table class="table table-borderless">
+                <tbody>
+
+                    <div id="iteracoesCarregadas"></div>
+
+                    <tr>
+                        <td class="d-none d-sm-table-cell text-center">
+                            <div class="mb-10">
+                                <a href="be_pages_generic_profile.html">
+                                    <img class="img-avatar" src="assets/media/avatars/avatar11.jpg" alt="">
+                                </a>
+                            </div>
+                            <small>132 Posts<br>Level 1</small>
+                        </td>
+                        <td>
+                            <form action="be_pages_forum_discussion.html" method="post" onsubmit="return false;">
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <textarea id="js-ckeditor" name="ckeditor"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-alt-primary pull-right" id="btnSalvar">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<div class="block">
-    <div class="block-header block-header-default">
-        <h3 class="block-title">Atendimentos</h3>
-    </div>
-    @*Chamada da Action no Controlador IteracaoController onde é listado as Iterações das Ocorrencias.*@
-    @Html.Action("ConsultarIteracao", "IteracaoOcorrencia", new { Id = Model.OcorrenciaId })
-</div>
+@section	ScriptPage	{
+    <script src="~/Template/assets/js/plugins/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/Views/Ocorrencia/DetalharOcorrencia.js"></script>
+}

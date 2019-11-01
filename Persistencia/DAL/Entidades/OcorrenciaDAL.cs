@@ -29,5 +29,14 @@ namespace Persistencia.DAL.Entidades
         {
             return context.Ocorrencias.FirstOrDefault(x => x.NumeroOcorrencia == numeroOcorrencia);
         }
+
+        public int ObterQuantidadeOcorrenciaStatusAberto()
+        {
+            var query = context.Ocorrencias.Where(p => p.StatusOcorrencia == Modelo.Entidades.Enumeradores.Status.Aberto);
+
+            int contagem = query.Count();
+
+            return contagem;
+        }
     }
 }

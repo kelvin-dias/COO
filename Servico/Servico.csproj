@@ -44,6 +44,7 @@
     <Compile Include="Entidades\OcorrenciaServico.cs" />
     <Compile Include="Entidades\ServidorServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabelas\DashboardServico.cs" />
     <Compile Include="Tabelas\IteracaoOcorrenciaServico.cs" />
   </ItemGroup>
   <ItemGroup>

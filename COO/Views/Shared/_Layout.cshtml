@@ -26,10 +26,9 @@
                 <div class="content-header-section">
                     <!-- Logo -->
                     <div class="content-header-item">
-                        <a class="link-effect font-w700 mr-5" href="index.html">
-                            <i class="si si-fire text-primary"></i>
-                            <span class="font-size-xl text-dual-primary-dark">code</span><span class="font-size-xl text-primary">base</span>
-                        </a>
+                        @*<a class=" font-w700 mr-5" href="@Url.Action("Index","Home")">
+                                <img src="~/Content/img/blacklogo.png" />
+                            </a>*@
                     </div>
                     <!-- END Logo -->
                 </div>
@@ -39,63 +38,19 @@
                     <!-- Header Navigation -->
                     <ul class="nav-main-header">
                         <li>
-                            <a class="active" href="bd_dashboard.html"><i class="si si-compass"></i>Dashboard</a>
+                            <a href="@Url.Action("Index","Dashboard")"><i class="si si-compass"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fas fa-check-square"></i>CheckList</a>
-                            <ul>
-                                <li>
-                                    <a href="bd_variations_hero_simple_1.html">Hero Simple 1</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_simple_2.html">Hero Simple 2</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_simple_3.html">Hero Simple 3</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_simple_4.html">Hero Simple 4</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_image_1.html">Hero Image 1</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_image_2.html">Hero Image 2</a>
-                                </li>
-                            </ul>
+                            <a href="@Url.Action("ConsultarCheckList","CheckList")"><i class="fas fa-check-square"></i>CheckList</a>
                         </li>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fas fa-exclamation-triangle"></i>Ocorrências</a>
-                            <ul>
-                                <li>
-                                    @Html.ActionLink("Nova Ocorrência", "AdicionarOcorrencia", "Ocorrencia")
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Listar Ocorrências", "ConsultarOcorrencia", "Ocorrencia")
-                                </li>
-                            </ul>
+                            <a href="@Url.Action("ConsultarOcorrencia","Ocorrencia")"><i class="fas fa-exclamation-triangle"></i>Ocorrências</a>
                         </li>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fas fa-server"></i>Servidores</a>
-                            <ul>
-                                <li>
-                                    @Html.ActionLink("Adicionar Servidor", "AdicionarServidor", "Servidor")
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Listar Servidores", "ConsultarServidor", "Servidor")
-                                </li>
-                            </ul>
+                            <a href="@Url.Action("ConsultarServidor","Servidor")"><i class="fas fa-server"></i>Servidores</a>
                         </li>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fas fa-phone-square"></i>Contatos</a>
-                            <ul>
-                                <li>
-                                    <a href="bd_variations_hero_simple_1.html">Hero Simple 1</a>
-                                </li>
-                                <li>
-                                    <a href="bd_variations_hero_simple_2.html">Hero Simple 2</a>
-                                </li>
-                            </ul>
+                            <a href="@Url.Action("ConsultarContato","Contato")"><i class="fas fa-phone-square"></i>Contatos</a>
                         </li>
                     </ul>
                     <!-- END Header Navigation -->
@@ -139,20 +94,21 @@
         <!-- END Main Container -->
         <!-- Footer -->
         @*<footer id="page-footer" class="opacity-0">
-            <div class="content py-20 font-size-xs clearfix">
-                <div class="float-right">
-                    Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                <div class="content py-20 font-size-xs clearfix">
+                    <div class="float-right">
+                        Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                    </div>
+                    <div class="float-left">
+                        <a class="font-w600" href="#" target="_blank">Codebase 3.0</a> &copy; <span class="js-year-copy">2017</span>
+                    </div>
                 </div>
-                <div class="float-left">
-                    <a class="font-w600" href="#" target="_blank">Codebase 3.0</a> &copy; <span class="js-year-copy">2017</span>
-                </div>
-            </div>
-        </footer>*@
+            </footer>*@
         <!-- END Footer -->
     </div>
     <!-- END Page Container -->
     <!-- Page JS Plugins -->
     <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @*<script src="@Url.Content("~/Template/assets/js/plugins/chartjs/Chart.bundle.min.js")"></script>*@
 
     <!-- Page JS Code -->

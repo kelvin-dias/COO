@@ -1,0 +1,8 @@
+﻿.pisca {
+    color: #fff;
+    transition: color .7s;
+}
+
+.mostrar {
+    color: #f34 !important;
+}
