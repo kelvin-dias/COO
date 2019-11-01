@@ -28,7 +28,7 @@ class DetalharOcorrencia {
                 data: { Id: $("#hddnOcorrenciaId").val() },
                 success: function (dados) {
                     $(dados).each((i) =>{
-                        $("#iteracoesCarregadas").html(
+                        $("#iteracoesCarregadas").append(
                         `<tr class="table-active">
                             <td class="d-none d-sm-table-cell"></td>
                             <td class="font-size-sm text-muted">
@@ -39,10 +39,9 @@ class DetalharOcorrencia {
                             <td class="d-none d-sm-table-cell text-center" style="width: 140px;">
                                 <div class="mb-10">
                                     <a href="be_pages_generic_profile.html">
-                                    <img class="img-avatar" src="assets/media/avatars/avatar5.jpg" alt="">
                                     </a>
                                 </div>
-                                <small>111 Posts<br>Level 2</small>
+                                <small></small>
                             </td>
                         <td>
                             <p>${dados[i].TextoIteracao}</p>

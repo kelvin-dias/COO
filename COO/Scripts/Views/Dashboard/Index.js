@@ -31,5 +31,5 @@ class Index {
 
 $(document).ready(function () {
     app = new Index();
-    setInterval(app.ObterDados, 1000);
+    setInterval(app.ObterDados, 10000);
 });

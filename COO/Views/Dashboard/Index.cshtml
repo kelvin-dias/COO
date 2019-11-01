@@ -8,9 +8,9 @@
 }
 
 <div class="col-6 col-md-4 col-xl-2">
-    <a class="block block-link-shadow text-center">
+    <a class="block block-link-shadow text-center" href="@Url.Action("ConsultarOcorrencia","Ocorrencia")">
         <div class="block-content ribbon ribbon-bookmark ribbon-primary ribbon-left" id="qtdOcorrencia">
-            <div class="ribbon-box"></div>
+            <div class="ribbon-box">@ViewBag.QtdOcorrencias</div>
             <p class="mt-5">
                 <i class="si si-bubbles fa-3x"></i>
             </p>
