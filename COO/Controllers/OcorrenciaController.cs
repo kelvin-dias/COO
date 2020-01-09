@@ -48,12 +48,15 @@ namespace COO.Controllers
         }
 
         // GET: Ocorrencia
+        [HttpGet]
         public ActionResult ConsultarOcorrencia()
         {
             return View(ocorrenciaServico.ObterOcorrenciasClassificadasPorDataHora());
         }
 
         // GET: Ocorrencia/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdicionarOcorrencia()
         {
             return View();
@@ -61,18 +64,28 @@ namespace COO.Controllers
 
         // POST: Ocorrencia/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdicionarOcorrencia(Ocorrencia ocorrencia)
         {
-            return GravarOcorrencia(ocorrencia);
+            if (ocorrencia != null)
+            {
+                return GravarOcorrencia(ocorrencia);
+            } else
+            {
+                 return HttpNotFound();
+            }
         }
 
         //	GET:	Servidor/Details
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DetalharOcorrencia(long? id)
         {
             return ObterVisaoOcorrenciaPorId(id);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult ListarIteracoes(long? Id)
         {
             var iteracoes = iteracaoServico.ObterIteracoes(Id);

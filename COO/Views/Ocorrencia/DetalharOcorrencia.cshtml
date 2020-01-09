@@ -5,94 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section	Styles	{
+    <link href="~/Template/assets/js/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+}
+
 @Html.HiddenFor(model => model.OcorrenciaId, new { id = "hddnOcorrenciaId" })
 
-<div class="row">
-    <div class="col-md-6 col-xl-3">
-        <a class="block block-link-shadow">
-            <div class="block-content block-content-full">
-                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.NumeroOcorrencia)</div>
-                <div class="font-size-sm font-w600 text-uppercase text-muted">
-                    @Html.DisplayNameFor(model => model.NumeroOcorrencia)
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-xl-3">
-        <a class="block block-link-shadow">
-            <div class="block-content block-content-full">
-                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.Titulo)</div>
-                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.Titulo)</div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-xl-3">
-        <a class="block block-link-shadow">
-            <div class="block-content block-content-full">
-                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.DataHora)</div>
-                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.DataHora)</div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-xl-3">
-        <a class="block block-link-shadow">
-            <div class="block-content block-content-full">
-                <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.CriticidadeOcorrencia)</div>
-                <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</div>
-            </div>
-        </a>
-    </div>
-
-</div>
-
-<div class="content pt-0">
+<div class="col-lg-12 px-0">
+    <!-- Bold -->
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Just a small question!</h3>
-            <div class="block-options">
+            <h3 class="block-title">Informações da Ocorrência</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.NumeroOcorrencia)</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">
+                            @Html.DisplayNameFor(model => model.NumeroOcorrencia)
+                        </div>
+                    </div>
+                </a>
+            </div>
 
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.Titulo)</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.Titulo)</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.DataHora)</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.DataHora)</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <div class="font-size-h5 font-w700">@Html.DisplayFor(model => model.CriticidadeOcorrencia)</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">@Html.DisplayNameFor(model => model.CriticidadeOcorrencia)</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- END Bold -->
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Full Editor</h3>
+            </div>
+            <div class="block-content block-content-full">
+                <!-- Summernote Container -->
+                <div class="js-summernote"></div>
             </div>
         </div>
-        <div class="block-content">
-            <table class="table table-borderless">
-                <tbody>
+    </div>
+</div>
 
-                    <div id="iteracoesCarregadas"></div>
-
-                    <tr>
-                        <td class="d-none d-sm-table-cell text-center">
-                            <div class="mb-10">
-                                <a href="be_pages_generic_profile.html">
-                                    <img class="img-avatar" src="assets/media/avatars/avatar11.jpg" alt="">
-                                </a>
-                            </div>
-                            <small>132 Posts<br>Level 1</small>
-                        </td>
-                        <td>
-                            <form action="be_pages_forum_discussion.html" method="post" onsubmit="return false;">
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <textarea id="js-ckeditor" name="ckeditor"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-alt-primary pull-right" id="btnSalvar">
-                                        Enviar
-                                    </button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="row">
+    <div class="col-2">
+        <button type="button" id="btn-salvar-oc"  class="btn btn-square btn-success min-width-125 mb-10">Enviar</button>
     </div>
 </div>
 
 @section	ScriptPage	{
-    <script src="~/Template/assets/js/plugins/ckeditor/ckeditor.js"></script>
+    <script src="~/Template/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
     <script src="~/Scripts/Views/Ocorrencia/DetalharOcorrencia.js"></script>
 }

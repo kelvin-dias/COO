@@ -3,19 +3,31 @@ class DetalharOcorrencia {
     constructor() {
         this.PluginCaixaTexto();
         this.CarregarIteracoes();
+        this.Eventos();
     }
 
     Eventos() {
-        $("#btn-salvar-oc").on("click", (e) => {
+        $('#btn-salvar-oc').click(function () {
             let objeto = {
-                
+                TextoIteracao: $('.note-editable').text()
+                , OcorrenciaId: $("#hddnOcorrenciaId").val()
             }
-        });
+debugger
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: "/Ocorrencia/AdicionarIteracoes",
+                data: { iteracao: objeto },
+                success: function (dados) {
+                    console.log(dados);
+                }
+            });
+        })
     }
     
     PluginCaixaTexto() {
         jQuery(function () {
-            Codebase.helpers('ckeditor');
+            Codebase.helpers(['summernote', 'ckeditor', 'simplemde']);
         });
     }
 
@@ -38,8 +50,7 @@ class DetalharOcorrencia {
                         <tr>
                             <td class="d-none d-sm-table-cell text-center" style="width: 140px;">
                                 <div class="mb-10">
-                                    <a href="be_pages_generic_profile.html">
-                                    </a>
+                                    <a href="be_pages_generic_profile.html"></a>
                                 </div>
                                 <small></small>
                             </td>
